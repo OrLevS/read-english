@@ -250,11 +250,10 @@ function startMemory(r) {
     g.appendChild(b);
   });
   $('mCount').textContent = `סבב ${ri + 1} מתוך ${rounds.length}`;
-  $('mMsg').textContent = 'הופכים שני קלפים: תמונה ומילה. אם הם שייכים זה לזה, הם נשארים פתוחים.';
+  $('mMsg').textContent = 'הופכים שני קלפים. זוג = תמונה והמילה שלה. זוג נשאר פתוח.';
 }
 function flip(b, c) {
   if (lock || b.classList.contains('open') || b.classList.contains('got')) return;
-  if (open.length === 1 && open[0].c.kind === c.kind) { $('mMsg').textContent = c.kind === 'img' ? 'עכשיו הופכים קלף מילה (עם רמקול).' : 'עכשיו הופכים קלף תמונה.'; return; }
   b.classList.add('open');
   if (c.kind === 'snd') say(c.w);
   open.push({ b, c });
